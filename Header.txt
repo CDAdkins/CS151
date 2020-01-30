@@ -1,0 +1,12 @@
+/*  filename.cpp
+    Author: Chris Adkins
+    Module: 
+    Project: 
+    Problem Statement: 
+
+    Algorithm:
+        1. 
+
+    Classes Needed:
+        <iostream> - For printing to the user
+*/
