@@ -1,0 +1,24 @@
+Chris Adkins
+CS 151 - Chapter 8 Review Questions
+Professor Chris Merrill
+1/30/2020
+
+8. 0
+
+19. columns
+
+25. A. Legal
+    B. Legal
+    C. Legal
+    D. Legal
+    E. Legal
+
+31. for (int i = 0; i < 25; i++) {
+        array2[i] = array1[i];
+    }
+
+32. No.
+    The total for the first array would be correct, however the
+    total for the second array would be added to the total of the 
+    first array. This would give an inaccurrate total for the second array.
+    This would be fixed by setting total = 0 before the second for-loop.
