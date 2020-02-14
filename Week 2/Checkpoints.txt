@@ -1,0 +1,34 @@
+/*  Checkpoints.txt
+    Author: Chris Adkins
+    Module: 2
+    Project: 1
+*/
+
+10.1 cout << &count;
+
+10.2 double* dPtr = &someDouble;
+
+10.3 
+     1. Defining a pointer.
+     2. Referencing the variable that a pointer is pointing to.
+     3. Multiplication.
+
+10.4 50 60 70
+     500 300 140
+
+10.5 for (int x = O; x < 100; x++)
+        cout << *(array + x) << endl;
+
+10.6 12040
+
+10.7 A) valid
+     B) invalid, -- must come after ptrInt.
+     C) invalid, must be *ptrInt.
+     D) invalid, must be *ptrInt.
+     E) invalid, cant add the value of an int to a memory address.
+
+10.8 A) valid.
+     B) valid.
+     C) valid.
+     D) invalid, can't use a float to initialize an int pointer.
+     E) invalid. Can't set pointer to reference an int before the int is initialized.

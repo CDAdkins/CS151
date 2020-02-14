@@ -1,0 +1,24 @@
+/*  NumberConversions.txt
+    Author: Chris Adkins
+    Module: 2
+    Project: 3
+*/
+
+Decimal to Binary:
+1   -> 1
+9   -> 1001
+10  -> 1010
+100 -> 1100100
+624 -> 1001110000
+
+Decimal to Hexadecimal
+10  -> A
+40  -> 28
+624 -> 270
+999 -> 3E7
+
+Hexadecimal to Decimal
+5    -> 5
+A3f  -> 2623
+100  -> 256
+bd92 -> 48530
