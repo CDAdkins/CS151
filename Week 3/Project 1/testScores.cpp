@@ -6,10 +6,20 @@
     This program takes input from the user to create a dynamically allocated array full of test scores and finds an average.
 
     Algorithm:
-        1. 
+        1. Create a pointer to an int array with a size based on user input.
+        2. Create a loop to allow the user to enter the test scores for each test.
+        3. Create a method to sort the test scores.
+            a. use a temp and swapped variable to keep track of what has been swapped.
+            b. loop through the scores and compare test score values. 
+            c. Swap smaller values wih larger values to sort in ascending order.
+        4. Print the sorted list to the user.
+        5. Create a method to find the average score from the array.
+            a. Loop through the array and add up the total sum.
+            b. Divide the sum by the total number of scores and print the average to the user.
 
     Classes Needed:
         <iostream> - For printing to the user
+        <iomanip> - For print formatting.
 */
 
 #include <iostream>

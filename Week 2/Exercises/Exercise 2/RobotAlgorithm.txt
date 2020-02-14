@@ -1,0 +1,3 @@
+create an int called Length and an int called width.
+walk one block forward until you hit a wall, increment length by one every time you move.
+once you hit a wall increment length one more time. Now we have the length 

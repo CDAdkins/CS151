@@ -4,6 +4,8 @@
         "initializer_list": "cpp",
         "xstring": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "ios": "cpp",
+        "iomanip": "cpp"
     }
 }

@@ -1,3 +1,29 @@
+/*  Main.cpp
+    Author: Chris Adkins
+    Module: 3
+    Project: 2
+    Problem Statement: 
+    This program takes input from the user to create a dynamically allocated array full of test scores and names.
+    It then finds and prints the average to the user.
+
+    Algorithm:
+        1. Create a class called student with a name and score variable. 
+        2. Create a pointer to a Student array with a size based on user input.
+        3. Create a loop to allow the user to enter the test scores and names for each student.
+        4. Create a method to sort the test scores.
+            a. use a temp and swapped variable to keep track of what has been swapped.
+            b. loop through the scores and compare test score values. 
+            c. Swap smaller values wih larger values to sort in ascending order.
+        5. Print the sorted list to the user.
+        6. Create a method to find the average score from the array.
+            a. Loop through the array and add up the total sum.
+            b. Divide the sum by the total number of scores and print the average to the user.
+
+    Classes Needed:
+        <iostream> - For printing to the user
+        <iomanip> - For print formatting.
+*/
+
 #include <iostream>
 #include <iomanip>
 

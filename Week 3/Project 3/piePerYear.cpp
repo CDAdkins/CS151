@@ -1,5 +1,25 @@
+/*  Main.cpp
+    Author: Chris Adkins
+    Module: 3
+    Project: 3
+    Problem Statement: 
+    This program takes an array of 30 ints and finds the mode.
+
+    Algorithm:
+        1. Create a pointer to an int array with a size of 30.
+        2. Loop 30 times and allow the user to populate the int array.
+        3. Create a method to sort the array and find the mode.
+            a. use a temp and swapped variable to keep track of what has been swapped.
+            b. loop through the scores and compare test score values. 
+            c. Swap smaller values wih larger values to sort in ascending order.
+        4. Loop through the array and keep track of the int that is most often used in the array.
+        5. Print the sorted array and the mode to the user.
+
+    Classes Needed:
+        <iostream> - For printing to the user
+*/
+
 #include <iostream>
-#include <iomanip>
 
 using namespace std;
 
