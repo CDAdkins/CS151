@@ -6,6 +6,7 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "ios": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "memory": "cpp"
     }
 }

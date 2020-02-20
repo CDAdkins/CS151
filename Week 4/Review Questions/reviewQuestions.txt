@@ -1,0 +1,7 @@
+25. Smart pointers can automatically delete dynamically allocated memory that isn't being used anymore.
+26. <memory>
+27. The unique_ptr deletes the object it is managing.
+28. Returns the raw pointer to the object that is being managed by the smart pointer.
+30. a) Pointer arithmetic (++, +1, etc)
+    b) Can't initialize a smart pointer with the value of another smart pointer.
+    c) Can't assign one smart pointer object to another.
