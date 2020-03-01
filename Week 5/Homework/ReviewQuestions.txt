@@ -1,0 +1,17 @@
+Review Questions:
+1. static
+5. member
+6. prototype
+11. ++
+15. Copy Constructor
+    Assignment Operator
+    Assignment Operator
+    Copy Constructor
+18. 
+    a. 3
+    b. 3
+    c. 1
+    d. 0
+    e. Thing one.putThing(1)
+23. Because passing by value would effectively create a copy.
+    Creating a copy in order to make a copy is inefficient.
