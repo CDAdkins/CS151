@@ -1,5 +1,24 @@
+/*  numbers.cpp
+    Author: Chris Adkins
+    Module: 5
+    Project: Homework 1
+    Problem Statement: This program takes an int entered by the user and converts it into english text.
+    5, 18, 295, 1019, and 9999
+
+
+    Algorithm:
+        1. Create arrays to hold the name for numbers under 20, then under 100.
+        2. Create strings to hold 'hundred', and 'number'.
+        3. Get the number from the user using cin.
+        4. Create a method to find the number of digits in the number.
+        5. Depending on the length of the number, use our arrays to match the digits with their corresponding name.
+        6. Stitch the digit names together and output the end result to the user.
+
+    Classes Needed:
+        <iostream> - For printing to the user and receiving input.
+*/
+
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -22,7 +41,7 @@ int getNumber() {
     return num;
 }
 
-string convertToText(int digits, int num) {
+void convertToText(int digits, int num) {
     switch (digits) {
         case 4: 
         cout << underTwenty[(num / 1000) - 1] << " " << thousand << " "; // Print the first digit in the number.
