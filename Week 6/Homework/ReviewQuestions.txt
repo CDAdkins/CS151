@@ -1,0 +1,6 @@
+11. postfix ++
+13. has-a
+14. convert
+19. Making a class a member of another class allows you to utilize the functionality of the object within your class.
+    Making a class a friend of another class allows you to access the other class's private variables and functions.
+22. Passing by value creates a temporary copy of the object.

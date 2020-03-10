@@ -9,5 +9,5 @@
         1. 
 
     Classes Needed:
-        <iostream> - For printing to the user
+        <iostream> - For printing to the user.
 */
