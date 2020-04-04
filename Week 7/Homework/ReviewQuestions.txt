@@ -1,0 +1,19 @@
+31. member variables and member functions.
+
+34. public.
+
+35. private (by default).
+
+36. private.
+
+37. private/private/private.
+
+38. protected/protected/inaccessible.
+
+39. public/protected/inaccessible.
+
+40. base class constructor.
+
+41. derived class destructor.
+
+42. :: (following the name of the base class that contains the overridden function)
