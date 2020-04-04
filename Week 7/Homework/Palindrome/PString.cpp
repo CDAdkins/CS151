@@ -1,3 +1,10 @@
+/*  PString.cpp
+    Author: Chris Adkins
+    Module: 7
+    Project: Homework 1
+    File Description: This is the PString class. It derives from the string class. It also has a palindrome checking function.
+*/
+
 #include <iostream>
 #include <string>
 #include "PString.h"

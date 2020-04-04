@@ -1,3 +1,10 @@
+/*  PString.h
+    Author: Chris Adkins
+    Module: 7
+    Project: Homework 1
+    File Description: This is the header file for the PString class.
+*/
+
 #pragma once
 
 #include <iostream>
