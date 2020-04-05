@@ -1,3 +1,22 @@
+/*  Main.cpp
+    Author: Chris Adkins
+    Module: 7
+    Project: Homework 2
+    Problem Statement: This program creates a type of string that can be encrypted by incrementing the values of each character.
+
+
+    Algorithm:
+        1. Create a class called EncryptableString that derives from the string class.
+        2. Create a constructor that simply calls the constructrof the base string class.
+        3. Create a function called Encrypt() in the new class.
+            a. Iterate through the string and use isalnum to find alphanumeric characters.
+            b. If an alphanumeric character is found, increment its value by one.
+
+    Classes Needed:
+        <iostream> - For printing to the user.
+        "EncryptableString.h" - To demonstrate the class.
+*/
+
 #include "EncryptableString.h"
 #include <iostream>
 

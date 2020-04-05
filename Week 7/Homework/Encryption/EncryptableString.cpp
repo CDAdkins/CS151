@@ -1,3 +1,11 @@
+/*  EncryptableString.cpp
+    Author: Chris Adkins
+    Module: 7
+    Project: Homework 2
+    File Description: This is the EncryptableString class. It derives from the string class. 
+                      It contains a function called encrypt() that will obfuscate the string very basically.
+*/
+
 #include "EncryptableString.h"
 
 EncryptableString::EncryptableString(string word) : string(word) {
