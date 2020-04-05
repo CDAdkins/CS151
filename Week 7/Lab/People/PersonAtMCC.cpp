@@ -9,8 +9,6 @@
 #include <iostream>
 using namespace std ;
 
-/**** WRITE THE MISSING CONSTRUCTORS, USE MEMBER INITIALIZATION ****/
-
 PersonAtMCC::PersonAtMCC() {
     this->id = 10000000;
     this->name = "John Doe";
