@@ -29,13 +29,13 @@ int main() {
     const int SIZE = 100;
     char password[SIZE];
 
-    cout << "Enter a password: ";
+    cout << "\nEnter a password: ";
     cin.getline(password, SIZE);
 
     if (checkPassword(password)) {
-        cout << "\nYour password meets all of the security conditions.\n";
+        cout << "Your password meets all of the security conditions.\n";
     } else {
-        cout << "\n\nYour password does not meet all of the security conditions.\n";
+        cout << "\nYour password does not meet all of the security conditions.\n";
     }
 }
 
