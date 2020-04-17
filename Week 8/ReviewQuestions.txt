@@ -1,4 +1,10 @@
 1. string.
 2. <cstring>
 3. string-literal.
-4. 
+4. const char *
+15. stoi
+18. itos
+19. 
+    char lastChar(const char *str) {
+        return str[strlen(str) - 1];
+    }
