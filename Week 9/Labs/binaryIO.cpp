@@ -15,8 +15,8 @@ int main() {
         exit(1);
     }
 
-    for (int i = 1; i <= 10; i++) { // Writing to the dat file.
-        dataFile.write(reinterpret_cast<char *>(&i), sizeof(double));
+    for (int i = 0; i <= 10; i++) { // Writing to the dat file.
+        dataFile.write(reinterpret_cast<char *>(&nums[i]), sizeof(double));
     }
 
     dataFile.close();
