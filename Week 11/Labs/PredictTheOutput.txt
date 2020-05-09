@@ -1,0 +1,28 @@
+Program 1:  
+----------
+1
+5
+
+Program 2:
+----------
+2
+10
+
+Program 3:
+----------
+2
+50
+
+Program 4:
+----------
+Inside getVal(), a: 2
+2
+Inside twist(second - before, b: 5
+Inside twist(second - after, b: 50
+Inside getVal(), a: 1
+1
+
+Program 5:
+----------
+2 
+(If the getVar() functions were virtual, then it would be 100.)

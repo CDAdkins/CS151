@@ -1,0 +1,9 @@
+2. abstract
+8. type cast
+11. C2 as a base class and C1 as a derived class.
+13. final
+14. override
+15. No, you cannot instantiate an object from an abstract class.
+16. Yes
+17. Yes
+18. No, you cannot instantiate an object from an abstract class.
