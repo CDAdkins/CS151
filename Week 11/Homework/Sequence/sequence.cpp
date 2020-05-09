@@ -60,9 +60,11 @@ int main() {
     Double dubSeq;
     Wild wildSeq;
     cout << "Double Sequence:\n";
-    dubSeq.printSeq(1, 1000);
-    dubSeq.sumSeq(1, 1000);
+    dubSeq.printSeq(1, 2000);
+    cout << "Sum: ";
+    dubSeq.sumSeq(1, 2000);
     cout << "\nWild Sequence:\n";
-    wildSeq.printSeq(1, 1000);
-    wildSeq.sumSeq(1, 1000);
+    wildSeq.printSeq(1, 2000);
+    cout << "Sum: ";
+    wildSeq.sumSeq(1, 2000);
 }
