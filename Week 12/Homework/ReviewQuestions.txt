@@ -1,0 +1,23 @@
+1. Throw Point
+2. Try
+4. Type Parameter
+5. Template Prefix
+7. Sequence
+8. Associative
+
+11. void reverse(T arr[], int size) {
+    T reverseArray[size];
+    for (int i = 0; i < size; i++) {
+        reverseArray[i] = arr[size - i - 1];
+        cout << reverseArray[i] << endl;
+    }
+}
+
+12. T add(T first, T second) {
+        sum = T();
+        sum = first + second;
+        return sum;
+    }
+    
+13. The characters would appear in reverse order. EX: ['a', 'b', 'c'] becomes ['c', 'b', 'a'].
+14. The strings would stay the same, but their order would be reversed. EX: ["one", "two", "three"] becomes ["three", "two", "one"].
