@@ -1,0 +1,38 @@
+Review Questions
+----------------
+11. double lastValue(ListNode *ptr) {
+        if (!ptr) {
+            cout << "Error;
+        }
+        if (ptr->next == NULL) {
+            return ptr-value;
+        } else {
+            return lastValue(ptr->next);
+        }
+    }
+
+12. ListNode *removeFirst(ListNode *ptr) {
+        if (!ptr) {
+            return NULL;
+        }
+        head = ptr->next;
+        delete ptr;
+        return head;
+    }
+
+13. ListNode *ListConcat(ListNode *list1, ListNode *list2) {
+        if (list1 == NULL)
+            return list2;
+        ListNode *ptr = list1;
+        while (ptr->next != NULL) 
+            ptr = ptr->next;
+        ptr->next = list2;
+        return list1;
+    }
+
+14. 56.4
+    34.2
+
+15. 56.4
+
+16. 31.5 56.4
