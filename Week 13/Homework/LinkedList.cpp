@@ -7,7 +7,7 @@
     Algorithm:
         1. Create a linked list class.
             a. Create a Node class.
-                I. Create a double to hold the node's values.
+                I. Create a double to hold the node's values.A
                 II. Create a Node pointer pointing to the next Node.
             b. Create Node pointers for the head and tail Nodes.
             c. We don't need a constructor because we don't need to initialize anything immediately.
