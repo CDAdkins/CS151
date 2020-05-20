@@ -1,0 +1,42 @@
+#pragma once
+using namespace std;
+
+#include <string>
+#include <time.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+
+
+// Forward Declaration
+class Slot;
+class Player;
+
+class Board {
+public:
+	enum action {END_GAME, PLAY, PRINT_BOARD, PRINT_ASSETS};
+
+protected:
+	int m_size;
+	Slot **m_arr;
+	string m_board_image[6][5];
+	int m_slot_width;
+	void increase_board();
+	void init_board_image();
+	void print_help();
+	Board::action get_command() const;
+
+public:
+
+	Board();
+	~Board();
+	int size() const;
+	Slot* operator[](int idx) const;
+	void play(Player* players);
+	void add_asset_slot(const string& propertyName);
+	void add_go_slot(const string& text);
+	void add_jail_slot(const string& text);
+	void add_chance_slot(const string& text, int amount);
+	friend ostream& operator<<(ostream& os, const Board& b);
+	Slot* get_slot(int inx) const;
+};

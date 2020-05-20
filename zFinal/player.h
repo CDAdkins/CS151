@@ -1,40 +1,59 @@
 #pragma once
 #include <string>
-#include <vector>
-//#include "property.h"
-//#include "card.h"
+#include <time.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
 using namespace std;
 
+const int GO_MONEY = 50;
+
+class Slot;
+class Board;
+class Asset;
+
 class Player {
-    private:
-    string name; // The name of the player.
-    //char piece; // Symbol to identify the player on the board.
-    int money; // The aount of money the player currently has.
-    //vector<Property> properties; // Vector of properties owned by the player.
-    //vector<Card> cards; // Vector of cards currenty held by the player.
-    int position; // Player's position on the board.
-    bool inJail; // Whether or not the player is in jail.
-    int jailTimeLeft; // How many more turns the player must stay in jail for.
-    bool doubles; // Was the players last roll doubles.
+protected:
+	int number; // Dictates the order of turns.
+	string name; // The players name.
+	int money; // How much money this player has.
+	bool inJail; // Whether or not this player is in jail.
+	int position; // The index of the slot on board.							
+	Asset* assets; // Assets that this player owns.
+	int numAssets; // Number of assets that this player owns.
+	Board* board; // Pointer to our board.
 
-    public:
-    // Constructor
-    Player(string aName); // Only constructor necessary for this class.
+public:
+	static int numPlayers; // Keeps track of how many players the game already has.
 
-    // Getters and Setters
-    int getRoll(); // Function to simulate a roll and keep track of doubles.
-    void setDoubles(bool result); // To be called within getRoll() if there are doubles.
-    string getName(); // Returns this player's name.
-    int getMoney(); // Returns this player's money.
-    int getPosition(); // Returns this player's position.
-    bool isInJail(); // Returns true if the player is in jail, false if they are not.
-    int getJailTimeLeft(); // Returns amount of turns the player must spend in jail.
-    
-    // Member Functions
-    bool pay(int num, Player otherPlayer); // Function to transfer money from this player to another.
-    void goToJail(); // Sends the player to jail.
-    void doTime(); // Decrements jailTimeLeft. If jailTimeLeft is <= 0, set inJail to false.
-    void movePosition(int num); // Moves the player forward a number of spaces.
-    void setPosition(int num); // Moves the player to a specific position.
+	// Constructor
+	Player(string name, Board& BB, int balance);
 
+	//	Destructor 
+	~Player();
+
+	bool payRent(int amount);
+	bool addAsset(Asset* a);
+	bool drawDice();
+
+	// Asset stack
+	void pop();
+	void push(Asset* asset);
+
+	// Getters
+	int getNumAssets()const;
+	int getPlayerNumber()const;
+	int getMoney()const;
+	static int getNumPlayers();
+
+	string getName()const;
+
+	// Setters
+	void setInJail();
+	void addMoney(int balance);
+
+	void print() const;
+	friend ostream& operator<<(ostream& os, const Player& P);
 };
+
+int randNum(int low, int high);
