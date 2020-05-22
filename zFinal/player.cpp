@@ -1,3 +1,10 @@
+/*  Player.cpp
+    Author: Chris Adkins
+    Module: 17
+    Project: Final
+    File Description: This is the main cpp file for our Player class, it handles the state of the player.
+*/
+
 #include "Player.h"
 #include "Board.h"
 #include "Slot.h"
@@ -33,7 +40,6 @@ void Player::print() const {
 	}
 	cout << endl;
 }
-
 
 ostream& operator<<(ostream& os, const Player& P) {
 	P.print();
@@ -88,7 +94,7 @@ bool Player::addAsset(Asset* a) {
 	}
 }
 
-// Poping the first Asset that purchased as requested.
+// Popping the first Asset that purchased as requested.
 void Player::pop() {
 	money += assets[0].getCost();
 	assets[0].setOwner(-1);
@@ -130,14 +136,14 @@ bool Player::drawDice() {
 	 if ((position + dice) >= 18) { // If the player's position plus their roll places them at or after go.
 		 cout << "Passed GO!" << endl;
 		 addMoney(GO_MONEY);
-		 cout << "\nYou move " << dice << " steps and land on " << board->get_slot((position + dice) % 18)->getName() << endl;
+		 cout << "\nYou move " << dice << " steps and land on " << board->getSlot((position + dice) % 18)->getName() << endl;
 	 } else {
-		 cout << "\nYou move " << dice << " steps and land on " << board->get_slot((position + dice))->getName() << endl;
+		 cout << "\nYou move " << dice << " steps and land on " << board->getSlot((position + dice))->getName() << endl;
 	 }
 
 	position = ((position + dice) % 18);
 	
-	return board->get_slot(position)->play(this);
+	return board->getSlot(position)->play(this);
 }
 
 // Generate random number between min and max (inclusive).

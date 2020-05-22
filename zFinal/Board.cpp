@@ -1,6 +1,12 @@
+/*  Board.cpp
+    Author: Chris Adkins
+    Module: 17
+    Project: Final
+    File Description: This class handles the drawing of the board and the spaces on the board as well as communication with the player.
+*/
+
 #include "Board.h"
 #include "Slot.h"
-
 using namespace std;
 
 string center(int width, const string& str) {
@@ -12,7 +18,7 @@ string center(int width, const string& str) {
 	int pad2 = diff - pad1;
 	return string(pad1, ' ') + str + string(pad2, ' ');
 }
-
+// Drawing the board
 void draw_edge_line(int width, const string* line) {
 	cout << "|" << string((width) * 5 + 4, '-') << "|" << endl;
 	cout << "|" << string((width) * 5 + 4, ' ') << "|" << endl;
@@ -36,7 +42,6 @@ void draw_inner_line(int width, const string* line, bool last) {
 	}
 }
 
-
 ostream& operator<<(ostream& os, const Board& b) {
 	draw_edge_line(b.m_slot_width, b.m_board_image[0]);
 	for (int row = 1; row < 5; row++)
@@ -45,7 +50,7 @@ ostream& operator<<(ostream& os, const Board& b) {
 	return os;
 }
 
-void Board::init_board_image() {
+void Board::initBoardImage() {
 	m_board_image[0][0] = m_arr[9]->getName();
 	m_board_image[0][1] = m_arr[10]->getName();
 	m_board_image[0][2] = m_arr[11]->getName();
@@ -89,69 +94,70 @@ void Board::init_board_image() {
 // Populating the board with assets.
 Board::Board() :m_arr(nullptr) {
 	srand(time_t(NULL));
-	m_size = 0;
-	add_go_slot("GO!");
-	add_asset_slot("Mediterranean Avenue");
-	add_asset_slot("Baltic Avenue");
-	add_asset_slot("Vermont Avenue");
-	add_jail_slot("JAIL! Wait 1 turn");
+	size = 0;
+	addGoSlot("GO!");
+	addAssetSlot("Mediterranean Avenue");
+	addAssetSlot("Baltic Avenue");
+	addAssetSlot("Vermont Avenue");
+	addJailSlot("JAIL! Wait 1 turn");
 
-	add_asset_slot("Virginia Avenue");
-	add_asset_slot("St. James Place");
-	add_chance_slot("\nChance!\nYou found a wallet on the sidewalk with $", 25);
-	add_asset_slot("Tennessee Avenue");
-	add_asset_slot("New York Avenue");
+	addAssetSlot("Virginia Avenue");
+	addAssetSlot("St. James Place");
+	addChanceSlot("\nChance!\nYou found a wallet on the sidewalk with $", 25);
+	addAssetSlot("Tennessee Avenue");
+	addAssetSlot("New York Avenue");
 
-	add_asset_slot("Atlantic Avenue");
-	add_asset_slot("Ventnor Avenue");
-	add_asset_slot("Marvin Gardens");
-	add_asset_slot("Pacific Avenue");
+	addAssetSlot("Atlantic Avenue");
+	addAssetSlot("Ventnor Avenue");
+	addAssetSlot("Marvin Gardens");
+	addAssetSlot("Pacific Avenue");
 
-	add_asset_slot("Pennsylvania Avenue");
-	add_chance_slot("Tax Return! Get $", 50);
-	add_asset_slot("Park Place");
-	add_asset_slot("Boardwalk");
-	init_board_image();
+	addAssetSlot("Pennsylvania Avenue");
+	addChanceSlot("Tax Return! Get $", 50);
+	addAssetSlot("Park Place");
+	addAssetSlot("Boardwalk");
+	initBoardImage();
 }
 
 Board::~Board() {
-	for (int i = 0; i < m_size; i++)
+	// Deleting everything in m_arr
+	for (int i = 0; i < size; i++)
 		delete m_arr[i];
 	delete[] m_arr;
 }
 
-void Board::increase_board() {
-	Slot ** tmp = new Slot *[m_size + 1];
+void Board::increaseBoard() {
+	Slot ** tmp = new Slot *[size + 1];
 	int i;
-	for (i = 0; i < m_size; i++)
+	for (i = 0; i < size; i++)
 		tmp[i] = m_arr[i];
-	m_size++;
+	size++;
 	delete[] m_arr;
 	m_arr = tmp;
 }
 
-void Board::add_asset_slot(const string& asset_name) {
-	increase_board();
-	m_arr[m_size - 1] = new Asset(m_size, asset_name);
+void Board::addAssetSlot(const string& asset_name) {
+	increaseBoard();
+	m_arr[size - 1] = new Asset(size, asset_name);
 }
 
 
-void Board::add_go_slot(const string& text) {
-	increase_board();
-	m_arr[m_size - 1] = new Go(m_size, text);
+void Board::addGoSlot(const string& text) {
+	increaseBoard();
+	m_arr[size - 1] = new Go(size, text);
 }
 
-void Board::add_jail_slot(const string& text) {
-	increase_board();
-	m_arr[m_size - 1] = new Jail(m_size, text);
+void Board::addJailSlot(const string& text) {
+	increaseBoard();
+	m_arr[size - 1] = new Jail(size, text);
 }
 
-void Board::add_chance_slot(const string& text, int amount) {
-	increase_board();
-	m_arr[m_size - 1] = new Chance(m_size, text, amount);
+void Board::addChanceSlot(const string& text, int amount) {
+	increaseBoard();
+	m_arr[size - 1] = new Chance(size, text, amount);
 }
 
-int Board::size() const {return m_size;}
+int Board::getSize() {return size;}
 
 Slot * Board::operator[](int idx) const {return m_arr[idx];}
 
@@ -162,20 +168,20 @@ istream& operator >> (istream& is, Board::action& i) {
 	return is;
 }
 
-void Board::print_help() {
+void Board::printHelp() {
 	cout << "\nContinue ("<< PLAY <<"),";
 	cout << " Print Board ("<< PRINT_BOARD <<"),";
 	cout << " Print Assets ("<< PRINT_ASSETS<< "),";
 	cout << " End Game ("<< END_GAME<< "): ";
 }
 
-Board::action Board::get_command() const {
+Board::action Board::getCommand() const {
 	Board::action cmd;
 	cin >> cmd;
 	if (cin.fail() || cmd < 0 || cmd > 3) {
 		cin.clear();
 		cin.ignore();
-		return get_command();
+		return getCommand();
 	}
 	return cmd;
 }
@@ -185,9 +191,8 @@ void Board::play(Player* players) {
 	action a;
 	while (1) {
 		cout << endl << players[player].getName() << "'s turn: ";
-		print_help();
-		a = (action)get_command();
-
+		printHelp();
+		a = (action)getCommand();
 		// Get input from the user prior to each turn.
 		switch(a) {
 			case END_GAME:
@@ -214,4 +219,4 @@ void Board::play(Player* players) {
 	cout << "Closing Game..." << endl;
 }
 
-Slot* Board::get_slot(int inx) const {return m_arr[inx];}
+Slot* Board::getSlot(int inx) const {return m_arr[inx];}

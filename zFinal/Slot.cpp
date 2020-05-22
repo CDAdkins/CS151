@@ -1,8 +1,15 @@
+/*  Slot.cpp
+    Author: Chris Adkins
+    Module: 17
+    Project: Final
+    File Description: This is the main cpp file for the Slot class and all of its subclasses.
+*/
+
 #include "Slot.h"
 using namespace std;
 
 // Slot
-// Constructor.
+// Constructors.
 Slot::Slot(int slotNum, string aName){size = slotNum; name = aName;}
 Slot::Slot(int slotNum){size = slotNum;}
 // Destructor.
@@ -46,7 +53,7 @@ string Asset::getName() const {return name;}
 int Asset::getOwner() const {return owner;}
 int Asset::getCost() const {return cost;}
 int Asset::getRent() const {return rent;}
-void Asset::setOwner(int player_num) {owner = player_num;}
+void Asset::setOwner(int playerNum) {owner = playerNum;}
 
 // Confirm purchase, updating balance and asset list.
 bool Asset::play(Player* p) {

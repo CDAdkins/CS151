@@ -1,3 +1,10 @@
+/*  Player.h
+    Author: Chris Adkins
+    Module: 17
+    Project: Final
+    File Description: This is the header file for our Player class.
+*/
+
 #pragma once
 #include <string>
 #include <time.h>
